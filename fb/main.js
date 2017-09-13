@@ -1,15 +1,57 @@
-window.onload = function(){
-    //用device.js判斷桌機還是手機來藏按鈕
-    if(device.desktop()){
-        document.getElementById("Linemobile").style.display="none";
-    }else{
-        document.getElementById("LinePc").style.display="none";
+$(function () {
+    pageObj.init();
+});
+var pageObj = {
+    "init": function () {
+        console.log("share-dialog--method--init...")
+        facebookSDK.init();
+        facebookSDK.bindEvents();
     }
-	
-    document.getElementById("LinePc").onclick = function(){
-        window.open('https://lineit.line.me/share/ui?url='+encodeURIComponent("https://a3804430.github.io/LineShare_Example/src/"),"_blank","toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
-    }
-    document.getElementById("Linemobile").onclick = function(){
-        window.open('line://msg/text/'+ encodeURIComponent("https://a3804430.github.io/LineShare_Example/src/"),"_blank","toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
+}
+var facebookSDK = {
+    "init": function () {
+        console.log("facebookSDK start init");
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '493177544378323',//http://commonst.360buyimg.com/
+                autoLogAppEvents: false,
+                xfbml: true,
+                version: 'v2.10'
+            });
+            // FB.AppEvents.logPageView();
+        };
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    },
+    "bindEvents": function () {
+        $("#share-dialog-sign").on("click", function () {
+            var url = $("#share-dialog-sign").nextAll("input").val();
+            if (!url || url == null || url == "") {
+                alert("分享地址不能为空");
+                return;
+            }
+            FB.ui(
+                {
+                    method: 'share',
+                    href: url,
+                },
+                // callback
+                function (response) {
+                    if (response && !response.error_message) {
+                        alert('Posting completed.');
+                    } else {
+                        alert('Error while posting.');
+                    }
+                }
+            );
+        });
     }
 }
