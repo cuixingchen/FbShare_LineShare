@@ -13,7 +13,7 @@ var facebookSDK = {
         console.log("facebookSDK start init");
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '493177544378323',//http://commonst.360buyimg.com/
+                appId: '171324200083999',//http://commonst.360buyimg.com/
                 autoLogAppEvents: false,
                 xfbml: true,
                 version: 'v2.10'
