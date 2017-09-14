@@ -39,7 +39,7 @@ var facebookSDK = {
                 return;
             }
             var title=$("#share-dialog-sign").nextAll("input:eq(1)").val();
-            url="?title="+encodeURIComponent('我的title是:'+title);
+            url+="?title="+encodeURIComponent('我的title是:'+title);
             FB.ui(
                 {
                     method: 'share',
