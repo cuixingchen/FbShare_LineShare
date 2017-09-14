@@ -22,6 +22,7 @@ var facebookSDK = {
         }(document, 'script', 'facebook-jssdk'));
     },
     "share":function (url,ft) {
+        alert("桌面分享");
         FB.ui(
             {
                 method: 'share',
@@ -34,6 +35,7 @@ var facebookSDK = {
         );
     },
     "shareMobile":function (url,ft) {
+        alert("mobile分享");
         FB.ui(
             {
                 method: 'share',
