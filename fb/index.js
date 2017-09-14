@@ -1,12 +1,11 @@
-$(function () {
-    var param=pageObj.getParameter("title");
+window.onload = function(){
+    var param=pageObj.getParameter("pin");
+    alert(param);
     param=decodeURIComponent(param);
     alert(param);
-    pageObj.title=param;
-    $("meta[property='og:title']").attr('content',param);
-});
+    document.getElementById("index-pin").value(param);
+};
 var pageObj = {
-    "title":"",
     "getParameter": function (param) {
         var query = window.location.search;
         var iLen = param.length;
