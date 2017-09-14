@@ -55,7 +55,7 @@ var facebookSDK = {
                 alert("分享地址不能为空");
                 return;
             }
-            url+=url+"?title="+encodeURIComponent('我的title是:'+pageObj.title);
+            url+="?title="+encodeURIComponent('我的title是:'+pageObj.title);
             FB.ui(
                 {
                     method: 'share',
