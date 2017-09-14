@@ -1,10 +1,12 @@
 $(function () {
     var param=pageObj.getParameter("title");
     alert(param);
+    pageObj.title=param;
     $("meta[property='og:title']").attr('content',param);
     pageObj.init();
 });
 var pageObj = {
+    "title":"",
     "init": function () {
         console.log("share-dialog--method--init...")
         facebookSDK.init();
@@ -53,6 +55,7 @@ var facebookSDK = {
                 alert("分享地址不能为空");
                 return;
             }
+            url+=url+encodeURIComponent('我的title是:'+pageObj.title);
             FB.ui(
                 {
                     method: 'share',
