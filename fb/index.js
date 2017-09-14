@@ -3,7 +3,7 @@ window.onload = function(){
     alert(param);
     param=decodeURIComponent(param);
     alert(param);
-    document.getElementById("index-pin").value(param);
+    document.getElementById("index-pin").value=param;
 };
 var pageObj = {
     "getParameter": function (param) {
