@@ -32,5 +32,18 @@ var facebookSDK = {
                 ft(response);
             }
         );
+    },
+    "shareMobile":function (url,ft) {
+        FB.ui(
+            {
+                method: 'share',
+                mobile_iframe: true,
+                href: url,
+            },
+            // callback
+            function (response) {
+                ft(response);
+            }
+        );
     }
 }

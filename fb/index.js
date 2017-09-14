@@ -9,13 +9,23 @@ window.onload = function(){
         var pin=document.getElementById("index-pin").value;
         var url="https://cuixingchen.github.io/FbShare_LineShare/fb/";
         url+="?pin="+encodeURIComponent(pin);
-        facebookSDK.share(url,function (response) {
-            if (response && !response.error_message) {
-                alert('Posting completed.');
-            } else {
-                alert('Error while posting.');
-            }
-        });
+        if(device.desktop()){
+            facebookSDK.share(url,function (response) {
+                if (response && !response.error_message) {
+                    alert('Posting completed.');
+                } else {
+                    alert('Error while posting.');
+                }
+            });
+        }else{
+            facebookSDK.shareMobile(url,function (response) {
+                if (response && !response.error_message) {
+                    alert('Posting completed.');
+                } else {
+                    alert('Error while posting.');
+                }
+            });
+        }
     }
 };
 var pageObj = {

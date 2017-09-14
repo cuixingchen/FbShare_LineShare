@@ -9,13 +9,23 @@ var pageObj = {
             var url=document.getElementById("share-dialog-sign-url").value;
             var pin=document.getElementById("share-dialog-sign-pin").value;
             url+="?pin="+encodeURIComponent(pin);
-            facebookSDK.share(url,function (response) {
-                if (response && !response.error_message) {
-                    alert('Posting completed.');
-                } else {
-                    alert('Error while posting.');
-                }
-            });
+            if(device.desktop()){
+                facebookSDK.share(url,function (response) {
+                    if (response && !response.error_message) {
+                        alert('Posting completed.');
+                    } else {
+                        alert('Error while posting.');
+                    }
+                });
+            }else{
+                facebookSDK.shareMobile(url,function (response) {
+                    if (response && !response.error_message) {
+                        alert('Posting completed.');
+                    } else {
+                        alert('Error while posting.');
+                    }
+                });
+            }
         }
     }
 }
