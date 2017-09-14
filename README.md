@@ -1,6 +1,6 @@
 # FbShare_LineShare
-facebook分享
-https://cuixingchen.github.io/FbShare_LineShare/fb/
+facebook分享测试地址
+https://cuixingchen.github.io/FbShare_LineShare/fb/main.html
 
-line分享
+line分享测试地址
 https://cuixingchen.github.io/FbShare_LineShare/line/
