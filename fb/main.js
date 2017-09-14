@@ -33,12 +33,13 @@ var facebookSDK = {
     },
     "bindEvents": function () {
         $("#share-dialog-sign").on("click", function () {
-            var url = $("#share-dialog-sign").nextAll("input").val();
+            var url = $("#share-dialog-sign").nextAll("input:eq(0)").val();
             if (!url || url == null || url == "") {
                 alert("分享地址不能为空");
                 return;
             }
-            url+="?title="+encodeURIComponent('我的title是:'+pageObj.title);
+            var title=$("#share-dialog-sign").nextAll("input:eq(1)").val();
+            url="?title="+encodeURIComponent('我的title是:'+title);
             FB.ui(
                 {
                     method: 'share',
