@@ -1,7 +1,7 @@
 $(function () {
     var param=pageObj.getParameter("title");
     alert(param);
-    $("meta[property='og:title']").attr(param);
+    $("meta[property='og:title']").attr('content',param);
     pageObj.init();
 });
 var pageObj = {
