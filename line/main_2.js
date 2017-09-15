@@ -12,11 +12,11 @@ window.onload = function(){
     }
     document.getElementById("LinePc").onclick = function(){
         var pin=document.getElementById("index-pin").value;
-        window.open('https://lineit.line.me/share/ui?url='+encodeURIComponent("https://cuixingchen.github.io/FbShare_LineShare/line/index_1.html?pin="+pin),"_blank","toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
+        window.open('https://lineit.line.me/share/ui?url='+encodeURIComponent("https://cuixingchen.github.io/FbShare_LineShare/line/index_2.html?pin="+pin),"_blank","toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
     }
     document.getElementById("Linemobile").onclick = function(){
         var pin=document.getElementById("index-pin").value;
-        window.open('line://msg/text/'+ encodeURIComponent("https://cuixingchen.github.io/FbShare_LineShare/line/index_1.html?pin="+pin),"_blank","toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
+        window.open('line://msg/text/'+ encodeURIComponent("https://cuixingchen.github.io/FbShare_LineShare/line/index_2.html?pin="+pin),"_blank","toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
     }
 }
 var pageObj = {
